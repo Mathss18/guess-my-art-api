@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ImagesModule } from './images/images.module';
 import { OpenaiModule } from './openai/openai.module';
 import { ConfigModule } from '@nestjs/config';
+import { S3Module } from './aws/s3/s3.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    S3Module,
   ],
   controllers: [AppController],
   providers: [AppService],
